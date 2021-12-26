@@ -8,6 +8,7 @@ const myPeer = new Peer(undefined, {
     path: "/peerjs/myapp",
     port: PORT
 })
+console.log(PORT);
 const myVideo = document.createElement('video')
 myVideo.muted = true
 const peers = {}
