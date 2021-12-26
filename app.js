@@ -1,5 +1,6 @@
 const express = require('express')
 const { SocketAddress } = require('net')
+const { ExpressPeerServer } = require('peer');
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
@@ -48,5 +49,10 @@ io.on('connection', socket => {
         console.log(socket.id);
     })
 })
+
+const peerServer = ExpressPeerServer(server, {
+    path: '/myapp'
+});
+app.use('/peerjs', peerServer);
 
 server.listen(process.env.PORT || 3000); 
