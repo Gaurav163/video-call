@@ -4,9 +4,7 @@ const socket = io('/', { query: "mobile=" + mobile })
 
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
-    host: '/',
-    path: "/peerjs/myapp",
-    port: PORT
+    url: "/peerjs/myapp"
 })
 console.log(PORT);
 const myVideo = document.createElement('video')
