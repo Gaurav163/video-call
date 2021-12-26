@@ -54,5 +54,6 @@ const peerServer = ExpressPeerServer(server, {
     path: '/myapp'
 });
 app.use('/peerjs', peerServer);
+console.log(process.env.PORT);
 
 server.listen(process.env.PORT || 3000); 
